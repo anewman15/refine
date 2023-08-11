@@ -2,9 +2,9 @@ import { IResourceComponentsProps } from "@refinedev/core";
 
 import { Create, useForm, useSelect } from "@refinedev/antd";
 
-import { Form, Input, Select, DatePicker } from "antd";
+import { DatePicker, Form, Input, Select } from "antd";
 
-import { ICompany, IContact, IMission, IInvoice } from "interfaces";
+import { ICompany, IContact, IInvoice, IMission } from "interfaces";
 
 export const InvoiceCreate: React.FC<IResourceComponentsProps> = () => {
     const { formProps, saveButtonProps } = useForm<IInvoice>();
@@ -27,7 +27,15 @@ export const InvoiceCreate: React.FC<IResourceComponentsProps> = () => {
     return (
         <Create saveButtonProps={saveButtonProps}>
             <Form {...formProps} layout="vertical">
-                <Form.Item label="Invoice Name" name="name">
+                <Form.Item
+                    label="Invoice Name"
+                    name="name"
+                    rules={[
+                        {
+                            required: true,
+                        },
+                    ]}
+                >
                     <Input />
                 </Form.Item>
                 <Form.Item

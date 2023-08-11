@@ -1,6 +1,6 @@
 import { IResourceComponentsProps } from "@refinedev/core";
 
-import { useForm, useSelect, Edit } from "@refinedev/antd";
+import { Edit, useForm, useSelect } from "@refinedev/antd";
 
 import { Form, Input, Select } from "antd";
 
@@ -33,7 +33,15 @@ export const InvoiceEdit: React.FC<IResourceComponentsProps> = () => {
     return (
         <Edit saveButtonProps={saveButtonProps}>
             <Form {...formProps} layout="vertical">
-                <Form.Item label="Invoice Name" name="name">
+                <Form.Item
+                    label="Invoice Name"
+                    name="name"
+                    rules={[
+                        {
+                            required: true,
+                        },
+                    ]}
+                >
                     <Input />
                 </Form.Item>
                 <Form.Item
