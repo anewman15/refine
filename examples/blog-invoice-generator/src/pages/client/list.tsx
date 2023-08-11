@@ -14,7 +14,7 @@ import { IClient } from "interfaces";
 
 export const ClientList: React.FC<IResourceComponentsProps> = () => {
     const { listProps } = useSimpleList<IClient>({
-        metaData: { populate: ["contacts"] },
+        meta: { populate: ["contacts"] },
     });
 
     const {
@@ -37,7 +37,7 @@ export const ClientList: React.FC<IResourceComponentsProps> = () => {
         action: "edit",
         resource: "clients",
         redirect: false,
-        metaData: {
+        meta: {
             populate: ["contacts"],
         },
     });
