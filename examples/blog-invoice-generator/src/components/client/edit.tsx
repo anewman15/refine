@@ -35,7 +35,20 @@ export const EditClient: React.FC<EditClientProps> = ({
             width={breakpoint.sm ? "500px" : "100%"}
             bodyStyle={{ padding: 0 }}
         >
-            <Edit saveButtonProps={saveButtonProps}>
+            <Edit
+                saveButtonProps={saveButtonProps}
+                title={
+                    <h3
+                        style={{
+                            fontSize: "20px",
+                            padding: "0 24px",
+                            fontWeight: "bold",
+                        }}
+                    >
+                        Edit Client
+                    </h3>
+                }
+            >
                 <Form
                     {...formProps}
                     layout="vertical"
