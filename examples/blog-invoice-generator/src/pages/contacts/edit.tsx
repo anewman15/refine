@@ -1,11 +1,13 @@
 import { Edit, useForm, useSelect } from "@refinedev/antd";
 import { IResourceComponentsProps } from "@refinedev/core";
 
-import { Form, Input, Select } from "antd";
+import { Form, Input, Grid, Select } from "antd";
 
 import { IContact } from "interfaces";
 
 export const ContactEdit: React.FC<IResourceComponentsProps> = () => {
+    const breakpoint = Grid.useBreakpoint();
+    const formWidth = breakpoint.lg ? "60%" : "100%";
     const { formProps, saveButtonProps, queryResult } = useForm<IContact>({
         metaData: { populate: ["client"] },
     });
@@ -20,7 +22,14 @@ export const ContactEdit: React.FC<IResourceComponentsProps> = () => {
     });
 
     return (
-        <Edit saveButtonProps={saveButtonProps}>
+        <Edit
+            saveButtonProps={saveButtonProps}
+            headerProps={{
+                style: {
+                    width: formWidth,
+                },
+            }}
+        >
             <Form {...formProps} layout="vertical">
                 <Form.Item
                     label="First Name"
