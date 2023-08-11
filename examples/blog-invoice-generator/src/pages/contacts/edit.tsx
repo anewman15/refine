@@ -1,7 +1,7 @@
-import { IResourceComponentsProps } from "@refinedev/core";
 import { Edit, useForm, useSelect } from "@refinedev/antd";
+import { IResourceComponentsProps } from "@refinedev/core";
 
-import { Form, Select, Input } from "antd";
+import { Form, Input, Select } from "antd";
 
 import { IContact } from "interfaces";
 
@@ -22,10 +22,26 @@ export const ContactEdit: React.FC<IResourceComponentsProps> = () => {
     return (
         <Edit saveButtonProps={saveButtonProps}>
             <Form {...formProps} layout="vertical">
-                <Form.Item label="First Name" name="first_name">
+                <Form.Item
+                    label="First Name"
+                    name="first_name"
+                    rules={[
+                        {
+                            required: true,
+                        },
+                    ]}
+                >
                     <Input />
                 </Form.Item>
-                <Form.Item label="Last Name" name="last_name">
+                <Form.Item
+                    label="Last Name"
+                    name="last_name"
+                    rules={[
+                        {
+                            required: true,
+                        },
+                    ]}
+                >
                     <Input />
                 </Form.Item>
                 <Form.Item label="Client Company" name={["client", "id"]}>
@@ -34,7 +50,16 @@ export const ContactEdit: React.FC<IResourceComponentsProps> = () => {
                 <Form.Item label="Phone Number" name="phone_number">
                     <Input />
                 </Form.Item>
-                <Form.Item label="Email" name="email">
+                <Form.Item
+                    label="Email"
+                    name="email"
+                    rules={[
+                        {
+                            required: true,
+                            type: "email",
+                        },
+                    ]}
+                >
                     <Input />
                 </Form.Item>
                 <Form.Item label="Job" name="job">
