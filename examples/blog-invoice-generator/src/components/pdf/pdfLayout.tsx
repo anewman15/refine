@@ -17,7 +17,7 @@ type PdfProps = {
 export const PdfLayout: React.FC<PdfProps> = ({ record }) => {
     const subtotal =
         record?.missions?.reduce((prev, cur) => {
-            return prev + cur.day * cur.daily_rate;
+            return prev + cur?.day * cur?.daily_rate;
         }, 0) ?? 0;
 
     return (
@@ -129,7 +129,7 @@ export const PdfLayout: React.FC<PdfProps> = ({ record }) => {
                         </View>
                         {record?.missions?.map((item) => {
                             return (
-                                <View key={item.id} style={styles.tableRow}>
+                                <View key={item?.id} style={styles.tableRow}>
                                     <Text
                                         style={[
                                             styles.tableCol,
