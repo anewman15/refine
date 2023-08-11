@@ -13,13 +13,30 @@ export const EditCompany: React.FC<EditCompanyProps> = ({
     formProps,
 }) => {
     return (
-        <Modal {...modalProps}>
+        <Modal
+            {...modalProps}
+            title={
+                <h3
+                    style={{
+                        padding: "0 16px",
+                        fontWeight: "bold",
+                    }}
+                >
+                    Edit Company
+                </h3>
+            }
+            style={{
+                padding: "0 80px",
+            }}
+        >
             <Form
                 {...formProps}
-                wrapperCol={{ span: 12 }}
                 layout="vertical"
                 onFinish={(values) => {
                     formProps.onFinish?.(mediaUploadMapper(values));
+                }}
+                style={{
+                    padding: "0 16px",
                 }}
             >
                 <Form.Item
