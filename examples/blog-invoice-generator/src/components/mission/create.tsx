@@ -10,7 +10,13 @@ export const CreateMission: React.FC<CreateMissionProps> = ({
     formProps,
 }) => {
     return (
-        <Modal {...modalProps} title="Create Mission">
+        <Modal
+            {...modalProps}
+            title="Create Mission"
+            style={{
+                padding: "0 80px",
+            }}
+        >
             <Form {...formProps} layout="vertical">
                 <Form.Item
                     label="Title"
