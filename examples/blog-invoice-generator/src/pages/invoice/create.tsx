@@ -2,11 +2,13 @@ import { IResourceComponentsProps } from "@refinedev/core";
 
 import { Create, useForm, useSelect } from "@refinedev/antd";
 
-import { DatePicker, Form, Input, Select } from "antd";
+import { DatePicker, Form, Grid, Input, Select } from "antd";
 
 import { ICompany, IContact, IInvoice, IMission } from "interfaces";
 
 export const InvoiceCreate: React.FC<IResourceComponentsProps> = () => {
+    const breakpoint = Grid.useBreakpoint();
+    const formWidth = breakpoint.lg ? "60%" : "100%";
     const { formProps, saveButtonProps } = useForm<IInvoice>();
 
     const { selectProps: companySelectProps } = useSelect<ICompany>({
@@ -25,7 +27,14 @@ export const InvoiceCreate: React.FC<IResourceComponentsProps> = () => {
     });
 
     return (
-        <Create saveButtonProps={saveButtonProps}>
+        <Create
+            saveButtonProps={saveButtonProps}
+            headerProps={{
+                style: {
+                    width: formWidth,
+                },
+            }}
+        >
             <Form {...formProps} layout="vertical">
                 <Form.Item
                     label="Invoice Name"

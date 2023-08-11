@@ -2,11 +2,13 @@ import { IResourceComponentsProps } from "@refinedev/core";
 
 import { Edit, useForm, useSelect } from "@refinedev/antd";
 
-import { Form, Input, Select } from "antd";
+import { Form, Input, Grid, Select } from "antd";
 
 import { IInvoice } from "interfaces";
 
 export const InvoiceEdit: React.FC<IResourceComponentsProps> = () => {
+    const breakpoint = Grid.useBreakpoint();
+    const formWidth = breakpoint.lg ? "60%" : "100%";
     const { formProps, saveButtonProps, queryResult } = useForm<IInvoice>({
         metaData: { populate: ["company", "contact", "missions"] },
     });
@@ -31,7 +33,14 @@ export const InvoiceEdit: React.FC<IResourceComponentsProps> = () => {
     });
 
     return (
-        <Edit saveButtonProps={saveButtonProps}>
+        <Edit
+            saveButtonProps={saveButtonProps}
+            headerProps={{
+                style: {
+                    width: formWidth,
+                },
+            }}
+        >
             <Form {...formProps} layout="vertical">
                 <Form.Item
                     label="Invoice Name"
