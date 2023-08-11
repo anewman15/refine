@@ -1,16 +1,16 @@
-import { IResourceComponentsProps, HttpError } from "@refinedev/core";
+import { HttpError, IResourceComponentsProps } from "@refinedev/core";
 
 import {
-    useSimpleList,
+    CreateButton,
     List,
     useDrawerForm,
-    CreateButton,
+    useSimpleList,
 } from "@refinedev/antd";
 
 import { List as AntdList } from "antd";
 
-import { IClient } from "interfaces";
 import { ClientItem, CreateClient, EditClient } from "components/client";
+import { IClient } from "interfaces";
 
 export const ClientList: React.FC<IResourceComponentsProps> = () => {
     const { listProps } = useSimpleList<IClient>({
@@ -37,6 +37,9 @@ export const ClientList: React.FC<IResourceComponentsProps> = () => {
         action: "edit",
         resource: "clients",
         redirect: false,
+        metaData: {
+            populate: ["contacts"],
+        },
     });
 
     return (
