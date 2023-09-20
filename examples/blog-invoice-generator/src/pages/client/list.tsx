@@ -11,8 +11,11 @@ import { List as AntdList } from "antd";
 
 import { ClientItem, CreateClient, EditClient } from "components/client";
 import { IClient } from "interfaces";
+import { useState } from "react";
 
 export const ClientList: React.FC<IResourceComponentsProps> = () => {
+    const [currentClient, setCurrentClient] = useState<IClient>();
+
     const { listProps } = useSimpleList<IClient>({
         meta: { populate: ["contacts"] },
     });
@@ -32,7 +35,7 @@ export const ClientList: React.FC<IResourceComponentsProps> = () => {
         drawerProps: editDrawerProps,
         formProps: editFormProps,
         saveButtonProps: editSaveButtonProps,
-        show: editShow,
+        show: editClientDrawerFrom,
     } = useDrawerForm<IClient, HttpError, IClient>({
         action: "edit",
         resource: "clients",
@@ -41,6 +44,11 @@ export const ClientList: React.FC<IResourceComponentsProps> = () => {
             populate: ["contacts"],
         },
     });
+
+    const editShow = (item: IClient) => {
+        setCurrentClient(item);
+        editClientDrawerFrom(item?.id);
+    };
 
     return (
         <>
@@ -67,6 +75,7 @@ export const ClientList: React.FC<IResourceComponentsProps> = () => {
             <EditClient
                 drawerProps={editDrawerProps}
                 formProps={editFormProps}
+                currentClient={currentClient as any}
                 saveButtonProps={editSaveButtonProps}
             />
         </>

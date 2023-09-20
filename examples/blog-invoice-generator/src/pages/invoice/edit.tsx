@@ -13,23 +13,28 @@ export const InvoiceEdit: React.FC<IResourceComponentsProps> = () => {
         metaData: { populate: ["company", "contact", "missions"] },
     });
 
-    const defaultValue = queryResult?.data?.data;
+    const currentInvoice = queryResult?.data?.data;
+    const defaultMissions = currentInvoice?.missions?.map(
+        (mission) => mission?.id,
+    );
 
     const { selectProps: companySelectProps } = useSelect({
         resource: "companies",
-        defaultValue: defaultValue?.company?.id,
+        defaultValue: currentInvoice?.company?.id,
         optionLabel: "name",
     });
 
     const { selectProps: contactSelectProps } = useSelect({
         resource: "contacts",
-        defaultValue: defaultValue?.contact?.id,
+        defaultValue: currentInvoice?.contact?.id,
         optionLabel: "first_name",
     });
 
     const { selectProps: missionSelectProps } = useSelect({
         resource: "missions",
+        defaultValue: defaultMissions,
         optionLabel: "mission",
+        optionValue: "id",
     });
 
     return (
@@ -67,14 +72,18 @@ export const InvoiceEdit: React.FC<IResourceComponentsProps> = () => {
 
                 <Form.Item
                     label="Mission"
-                    name={["missions"]}
+                    name={["mission", "id"]}
                     rules={[
                         {
                             required: true,
                         },
                     ]}
                 >
-                    <Select {...missionSelectProps} mode="multiple" />
+                    <Select
+                        {...missionSelectProps}
+                        mode="multiple"
+                        defaultValue={defaultMissions as any}
+                    />
                 </Form.Item>
                 <Form.Item label="Discount(%)" name="discount">
                     <Input />

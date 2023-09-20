@@ -10,7 +10,7 @@ const { Title, Text } = Typography;
 
 type ClientItemProps = {
     item: IClient;
-    editShow: (id?: string | undefined) => void;
+    editShow: (item: IClient) => void;
 };
 
 export const ClientItem: React.FC<ClientItemProps> = ({ item, editShow }) => {
@@ -21,7 +21,7 @@ export const ClientItem: React.FC<ClientItemProps> = ({ item, editShow }) => {
             key: "1",
             style: { fontWeight: 500 },
             icon: <FormOutlined style={{ color: "green" }} />,
-            onClick: () => editShow(item?.id),
+            onClick: () => editShow(item),
             label: "Edit Client",
         },
         {

@@ -16,7 +16,7 @@ export const ContactEdit: React.FC<IResourceComponentsProps> = () => {
 
     const { selectProps } = useSelect({
         resource: "clients",
-        defaultValue: defaultClientCompany?.client?.id,
+        // defaultValue: defaultClientCompany?.client?.id,
         optionValue: "id",
         optionLabel: "name",
     });
