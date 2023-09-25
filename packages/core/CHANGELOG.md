@@ -1,4 +1,42 @@
-# @pankod/refine-core
+# @refinedev/core
+
+## 4.34.0
+
+### Minor Changes
+
+-   [#4775](https://github.com/refinedev/refine/pull/4775) [`3052fb22449`](https://github.com/refinedev/refine/commit/3052fb22449c5e35c607e95c060c38ca48e00c82) Thanks [@alicanerdurmaz](https://github.com/alicanerdurmaz)! - feat: `queryKeys` and `pickDataProvider` functions are exported.
+
+    `pickDataProvider`: returns the data provider name based on the provided name or fallbacks to resource definition, or `default`.
+
+    `queryKeys`: returns the query keys used by the data hooks based on the `resource` definition
+
+## 4.33.0
+
+### Minor Changes
+
+-   [#4775](https://github.com/refinedev/refine/pull/4775) [`3052fb22449`](https://github.com/refinedev/refine/commit/3052fb22449c5e35c607e95c060c38ca48e00c82) Thanks [@alicanerdurmaz](https://github.com/alicanerdurmaz)! - feat: `queryKeys` and `pickDataProvider` functions are exported.
+
+    `pickDataProvider`: returns the data provider name based on the provided name or fallbacks to resource definition, or `default`.
+
+    `queryKeys`: returns the query keys used by the data hooks based on the `resource` definition
+
+## 4.32.2
+
+### Patch Changes
+
+-   [#4765](https://github.com/refinedev/refine/pull/4765) [`e3e38de4114`](https://github.com/refinedev/refine/commit/e3e38de4114209fe43fe35ac3622d44e355694bd) Thanks [@yildirayunlu](https://github.com/yildirayunlu)! - chore: remove `refine cloud` early access message
+
+## 4.32.1
+
+### Patch Changes
+
+-   [#4765](https://github.com/refinedev/refine/pull/4765) [`e3e38de4114`](https://github.com/refinedev/refine/commit/e3e38de4114209fe43fe35ac3622d44e355694bd) Thanks [@yildirayunlu](https://github.com/yildirayunlu)! - chore: remove `refine cloud` early access message
+
+## 4.32.0
+
+### Minor Changes
+
+-   [#4741](https://github.com/refinedev/refine/pull/4741) [`026ccf34356`](https://github.com/refinedev/refine/commit/026ccf34356bc621183894c0ee4518a6645369d1) Thanks [@aliemir](https://github.com/aliemir)! - Added `sideEffects: false` to `package.json` to help bundlers tree-shake unused code.
 
 ## 4.31.0
 

@@ -13,8 +13,8 @@ ege:
 umut:
     name: Umut Özdemir
     title: Frontend Developer
-    url: https://github.com/miyavsu-limited
-    image_url: https://github.com/miyavsu-limited.png
+    url: https://github.com/umutzd
+    image_url: https://avatars.githubusercontent.com/u/22444985?v=4
 
 salih:
     name: Salih Özdemir
@@ -205,3 +205,22 @@ marvel_ken:
     name: Marvel Ken
     title: Software Developer
     image_url: /img/generic-profile.png
+
+obisike_treause:
+    name: Obisike Treasure
+    title: Software Developer
+    image_url: https://github.com/Otrex.png
+
+ali_emir:
+    name: Ali Emir
+    title: Software Developer
+    image_url: https://github.com/aliemir.png
+
+frank_joseph:
+    name: Frank Joseph
+    title: Software Developer
+    image_url: /img/generic-profile.png
+
+
+
+

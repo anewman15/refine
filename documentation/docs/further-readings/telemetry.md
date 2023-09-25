@@ -30,7 +30,7 @@ We try to answer the question **how many users are actively using the refine fra
 <Tabs>
     <TabItem value="refine-core" label="refine core" default>
 
-The tracking happens when a refine application is loaded on the user's browser. On application init, a single HTTP request is sent to <a target="_blank" rel="noopener" href="https://telemetry.refine.dev">https://telemetry.refine.dev</a>. The request body is encoded with Base64 to be decoded on refine servers.
+The tracking happens when a refine application is loaded on the user's browser. On application init, a single HTTP request is sent to "https://telemetry.refine.dev". The request body is encoded with Base64 to be decoded on refine servers.
 
 There are no consequent requests for that session, as we do NOT collect any behavioral information such as _page views_, _button clicks_, etc.
 
@@ -63,18 +63,18 @@ Lastly, we collect the contact information, **if provided** upon project creatio
 refine.new is the cloud-based alternative to CLI for creating refine projects.
 It requires users signing in with an GitHub account and a limited set of public profile information is collected for analytics purposes. The collected data can also be automatically linked to the created project.
 
-Projects created with refine.new still can opt-out from telemetry by simply adding disableTelemetry prop to the <Refine /> component.
+Projects created with refine.new still can opt-out from telemetry by simply adding `disableTelemetry` prop to the `<Refine>` component's `options` prop.
 :::
 
 ## How to opt-out?
 
-You can opt out of telemetry by simply adding `disableTelemetry` prop to the `<Refine />` component.
+You can opt out of telemetry by simply adding `disableTelemetry` prop to the `<Refine>` component's `options` prop.
 
   </TabItem>
 
 <TabItem value="refine-cli" label="refine CLI">
 
-After running a command with the `refine` CLI, a single HTTP request is sent to <a target="_blank" rel="noopener" href="https://telemetry.refine.dev/cli">https://telemetry.refine.dev/cli</a>.
+After running a command with the `refine` CLI, a single HTTP request is sent to "https://telemetry.refine.dev/cli".
 
 ## What is collected?
 
@@ -98,7 +98,7 @@ Additionally, the following information is extracted and collected from the HTTP
 refine.new is the cloud-based alternative to CLI for creating refine projects.
 It requires users signing in with an GitHub account and a limited set of public profile information is collected for analytics purposes. The collected data can also be automatically linked to the created project.
 
-Projects created with refine.new still can opt-out from telemetry by simply adding disableTelemetry prop to the <Refine /> component.
+Projects created with refine.new still can opt-out from telemetry by simply adding `disableTelemetry` prop to the `<Refine>` component's `options` prop.
 :::
 
 ## How to opt-out?

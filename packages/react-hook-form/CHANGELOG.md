@@ -1,4 +1,22 @@
-# @pankod/refine-react-hook-form
+# @refinedev/react-hook-form
+
+## 4.8.2
+
+### Patch Changes
+
+-   [#4767](https://github.com/refinedev/refine/pull/4767) [`c757355da60`](https://github.com/refinedev/refine/commit/c757355da6089d0e18609a1bb2d316d928412b16) Thanks [@alicanerdurmaz](https://github.com/alicanerdurmaz)! - fixed: `useModalForm` sends request twice when `syncWithLocation` is true
+
+## 4.8.1
+
+### Patch Changes
+
+-   [#4767](https://github.com/refinedev/refine/pull/4767) [`c757355da60`](https://github.com/refinedev/refine/commit/c757355da6089d0e18609a1bb2d316d928412b16) Thanks [@alicanerdurmaz](https://github.com/alicanerdurmaz)! - fixed: `useModalForm` sends request twice when `syncWithLocation` is true
+
+## 4.8.0
+
+### Minor Changes
+
+-   [#4741](https://github.com/refinedev/refine/pull/4741) [`026ccf34356`](https://github.com/refinedev/refine/commit/026ccf34356bc621183894c0ee4518a6645369d1) Thanks [@aliemir](https://github.com/aliemir)! - Added `sideEffects: false` to `package.json` to help bundlers tree-shake unused code.
 
 ## 4.7.0
 
